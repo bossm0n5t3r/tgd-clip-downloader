@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 
 function download() {
-  const url = $('.featured-clip.active > img').attr('src');
+  const url = $('meta[property="og:image"]').attr('content');
   const previewIndex = url.indexOf('preview');
   const downloadUrl = url.substring(0, previewIndex - 1) + '.mp4';
 
